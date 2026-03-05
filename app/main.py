@@ -10,8 +10,6 @@ class Ship:
                  end: tuple,
                  is_drowned: bool = False) -> None:
         # Create decks and save them to a list `self.decks`
-        self.start = start
-        self.end = end
         self.is_drowned = is_drowned
         self.decks = []
 
@@ -47,8 +45,8 @@ class Ship:
         if all(not d.is_alive for d in self.decks):
             self.is_drowned = True
             return "Sunk!"
-        else:
-            return "Hit!"
+
+        return "Hit!"
 
 
 class Battleship:
